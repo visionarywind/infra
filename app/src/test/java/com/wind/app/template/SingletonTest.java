@@ -28,7 +28,9 @@ public class SingletonTest {
         IntStream.range(0, 9).forEach(e -> {
           try {
               Assert.assertEquals(lists.get(e).get(), lists.get(e+1).get());
-          } catch (Exception ex) {}
+          } catch (Exception ex) {
+              throw new RuntimeException(ex);
+          }
         });
         Singleton singleton = Singleton.getInstance();
         logger.info(singleton);
