@@ -1,15 +1,10 @@
 apply plugin: 'java'
-apply plugin: 'scala'
-apply plugin: 'application'
 
 group 'com.wind'
+
 sourceCompatibility=1.8
 
-mainClassName='com.wind.app.App'
-
 dependencies {
-    compile project(':core')
-
     compile 'com.google.guava:guava:25.1-jre'
     compile 'com.twitter:finagle-http_2.11:6.28.0'
     compile 'org.projectlombok:lombok:1.16.18'

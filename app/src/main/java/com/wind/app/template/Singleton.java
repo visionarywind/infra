@@ -1,4 +1,4 @@
-package com.wind.sf.template;
+package com.wind.app.template;
 
 /**
  * Created by shanfeng on 2018/7/4.

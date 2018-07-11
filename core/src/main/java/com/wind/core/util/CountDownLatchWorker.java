@@ -1,4 +1,4 @@
-package com.wind.sf.util;
+package com.wind.core.util;
 
 import com.google.common.base.Preconditions;
 import org.apache.logging.log4j.LogManager;

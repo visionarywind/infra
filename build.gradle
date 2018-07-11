@@ -2,6 +2,13 @@ plugins {
  id 'idea'
 }
 
+allprojects {
+  repositories {
+    mavenCentral()
+    //maven { url 'https://repository.apache.org/snapshots' }
+  }
+}
+
 subprojects {
   version = '1.0.0-SNAPSHOT'
 }

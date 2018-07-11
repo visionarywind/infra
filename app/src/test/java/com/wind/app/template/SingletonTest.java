@@ -1,6 +1,6 @@
-package com.wind.sf.template;
+package com.wind.app.template;
 
-import com.wind.sf.util.CountDownLatchWorker;
+import com.wind.core.util.CountDownLatchWorker;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.junit.Assert;
