@@ -2,3 +2,4 @@ rootProject.name = 'infra'
 
 include 'app'
 include 'core'
+include 'codes'
