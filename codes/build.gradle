@@ -2,8 +2,6 @@ apply plugin: 'java'
 
 group 'com.wind'
 
-sourceCompatibility=1.8
-
 dependencies {
     compile 'com.google.guava:guava:25.1-jre'
     compile 'org.projectlombok:lombok:1.16.18'
