@@ -3,18 +3,32 @@ plugins {
 }
 
 allprojects {
+    buildDir = "${projectDir}/../build/${name}"
+    
     tasks.withType(JavaCompile) {
         options.encoding = "UTF-8"
         sourceCompatibility=1.8
         targetCompatibility=1.8
     }
 
-  repositories {
-    mavenCentral()
+    tasks.withType(ScalaCompile) {
+        options.encoding = 'UTF-8'
+        sourceCompatibility = 1.8
+        targetCompatibility = 1.8
+
+        configure(scalaCompileOptions.forkOptions) {
+            memoryMaximumSize = '512m'
+        }
+    }
+    
+    repositories {
+      mavenLocal()
+      mavenCentral()
     //maven { url 'https://repository.apache.org/snapshots' }
-  }
+    }
 }
 
 subprojects {
-  version = '1.0.0-SNAPSHOT'
+    apply plugin: 'java'
+    version = '1.0.0-SNAPSHOT'
 }
