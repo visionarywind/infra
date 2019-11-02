@@ -4,28 +4,19 @@ plugins {
 
 allprojects {
     buildDir = "${projectDir}/../build/${name}"
-    
+
     tasks.withType(JavaCompile) {
-        options.encoding = "UTF-8"
-        sourceCompatibility=1.8
-        targetCompatibility=1.8
-    }
+        sourceCompatibility = JavaVersion.VERSION_1_8
+        targetCompatibility = JavaVersion.VERSION_1_8
 
-    tasks.withType(ScalaCompile) {
+        options.compilerArgs = ["-Xlint:unchecked", "-Xlint:deprecation", "-parameters"]
         options.encoding = 'UTF-8'
-        sourceCompatibility = 1.8
-        targetCompatibility = 1.8
-
-        configure(scalaCompileOptions.forkOptions) {
-            memoryMaximumSize = '512m'
-        }
     }
-    
+
     repositories {
         mavenLocal()
         jcenter()
         mavenCentral()
-        //maven { url 'https://repository.apache.org/snapshots' }
     }
 }
 

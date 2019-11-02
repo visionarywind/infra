@@ -30,7 +30,7 @@ public class TestFilter {
 			return result;
 		};
 
-		Service<StringBuilder, StringBuilder> realSrv = fFilter.andThen(eFilter).andThen(srv);
+		Service<StringBuilder, StringBuilder> realSrv = fFilter.andThen(eFilter).then(srv);
 		StringBuilder expected = realSrv.apply(new StringBuilder("")).get();
 		Assert.assertEquals("fAppendBefore_eAppendBefore__eAppendAfter_fAppendAfter", expected.toString());
 	}
