@@ -3,11 +3,11 @@ apply plugin: 'scala'
 apply plugin: 'application'
 
 group 'com.wind'
-sourceCompatibility=1.8
 
 mainClassName='com.wind.app.App'
 
 dependencies {
+    compile project(':codes')
     compile project(':core')
 
     compile 'com.google.guava:guava:25.1-jre'

@@ -3,15 +3,6 @@ apply plugin: 'scala'
 
 group 'com.wind'
 
-tasks.withType(ScalaCompile) {
-    sourceCompatibility = 1.8
-    targetCompatibility = 1.8
-
-    configure(scalaCompileOptions.forkOptions) {
-        memoryMaximumSize = '512m'
-    }
-}
-
 dependencies {
     compile 'org.scala-lang:scala-library:2.11.8'
     compile 'org.scala-lang:scala-compiler:2.11.8'
