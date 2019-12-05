@@ -39,3 +39,10 @@ gradle-app.setting
 .json
 .dat
 .tmp
+
+# Auto generate files
+.project
+.settings/
+.classpath
+bin/
+.sts4-cache/
