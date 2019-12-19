@@ -17,4 +17,3 @@ indent_size = 2
 
 [*.scss]
 indent_size = 2
->>>>>>> [dev] add kmp algo and two sum
