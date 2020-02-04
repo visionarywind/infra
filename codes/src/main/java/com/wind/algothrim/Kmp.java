@@ -63,4 +63,39 @@ public class Kmp {
         }};
         return Long.valueOf(right.stream().filter(e -> set.contains(e)).count()).intValue();
     }
+
+    public int kmp(String s, String p) {
+        // ...略去条件检查
+        int[] prefix = kmpPrefix(p);
+        for (int i=0, j=0, end=s.length(); i!=end; i++) {
+            while (j>0 && s.charAt(i) != p.charAt(j)) {
+                j = prefix[j-1];
+            }
+            if (s.charAt(i) == p.charAt(j)) {
+                j ++;
+            }
+            if (j == p.length()) {
+                return i - j + 1;
+            }
+        }
+        return -1;
+    }
+
+    public int[] kmpPrefix(String pattern) {
+        // ...略去条件检查
+        int len = pattern.length();
+        int[] prefix = new int[len];
+        int k = 0;
+        for (int i=1; i!=len; i++) {
+            // 不相等，需要迭代查找，直到不存在
+            while (pattern.charAt(k) != pattern.charAt(i) && k>0) {
+                k = prefix[k - 1];  // 定位下一可能的最长匹配位置
+            }
+            if (pattern.charAt(k) == pattern.charAt(i)) {
+                k ++;
+            }
+            prefix[i] = k;
+        }
+        return prefix;
+    }
 }

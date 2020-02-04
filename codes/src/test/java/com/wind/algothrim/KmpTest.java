@@ -40,4 +40,11 @@ public class KmpTest {
             Assert.assertEquals(output.get(i).intValue(), impl.count(src, target));
         }
     }
+
+    @Test
+    public void testPrefix() {
+        String s1 = "ababcaba";
+        int[] r1 = { 0, 0, 1, 2, 0, 1, 2, 3 };
+        Assert.assertEquals(r1, impl.kmpPrefix(s1));
+    }
 }
