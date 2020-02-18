@@ -6,14 +6,27 @@ public class Main {
         Scanner sc = new Scanner(System.in);
         try {
             while (sc.hasNext()) {
-                int step = sc.nextInt();
                 String input = sc.nextLine();
-                System.out.println(transform(input, step));
+                System.out.println(freqAlphabets(input));
             }
         } finally {
             if (sc != null) {
                 sc.close();
             }
+        }
+    }
+
+    public static  String freqAlphabets(String s) {
+        if (s == null || s.length() == 0) { return s; }
+        if (s.length() == 1) {
+            return Character.toString((char)('a' + s.charAt(0) - '0' - 1)); }
+        if (s.length() == 2) {
+            return freqAlphabets(s.substring(0, 1)) + freqAlphabets(s.substring(1));
+        }
+        if (s.charAt(2) == '#') {
+            return Character.toString((char)('j' + Integer.valueOf(s.substring(0, 2)) - 10)) + freqAlphabets(s.substring(3));
+        } else {
+            return Character.toString((char)('a' + s.charAt(0) - '0' - 1)) + freqAlphabets(s.substring(1));
         }
     }
 
