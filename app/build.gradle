@@ -4,6 +4,7 @@ apply plugin: 'application'
 
 group 'com.wind'
 
+// applicationDefaultJvmArgs = ["-Xms512M", "-Xmx512M", "-Djavafx.embed.singleThread=true"]
 mainClassName='com.wind.app.App'
 
 dependencies {

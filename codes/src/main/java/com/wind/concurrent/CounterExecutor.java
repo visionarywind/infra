@@ -7,7 +7,7 @@ import java.util.concurrent.FutureTask;
 import java.util.function.Function;
 
 public class CounterExecutor {
-    public void start() throws Exception {
+    public void start() {
         long[] counts = { 10_000L, 10_000_000L };
         Arrays.stream(counts).forEach(count -> {
             System.out.println("Start to test count : " + count);
