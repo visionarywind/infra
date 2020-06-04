@@ -1,4 +1,4 @@
-package com.wind.concurrent;
+package com.wind.concurrent.counter;
 
 public class SynchronizedObjectCounter implements Counter {
     private Object lock = new Object();

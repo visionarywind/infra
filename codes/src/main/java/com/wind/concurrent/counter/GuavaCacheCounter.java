@@ -1,4 +1,4 @@
-package com.wind.concurrent;
+package com.wind.concurrent.counter;
 
 import java.util.concurrent.atomic.LongAdder;
 

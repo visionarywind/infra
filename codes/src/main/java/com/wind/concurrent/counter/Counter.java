@@ -1,4 +1,4 @@
-package com.wind.concurrent;
+package com.wind.concurrent.counter;
 
 public interface Counter {
     void inc(String key);

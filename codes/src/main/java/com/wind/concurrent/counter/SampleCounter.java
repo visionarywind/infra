@@ -1,4 +1,4 @@
-package com.wind.concurrent;
+package com.wind.concurrent.counter;
 
 public class SampleCounter implements Counter {
     private long value = 0L;
