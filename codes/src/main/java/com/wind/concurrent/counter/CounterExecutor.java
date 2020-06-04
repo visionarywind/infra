@@ -12,6 +12,7 @@ public class CounterExecutor {
         Arrays.stream(counts).forEach(count -> {
             System.out.println("Start to test count : " + count);
             try {
+                execute(new VolatileCounter(), count, String::valueOf);
                 execute(new SampleCounter(), count, String::valueOf);
                 execute(new SynchronizedObjectCounter(), count, String::valueOf);
                 execute(new ReentrantLockCounter(), count, String::valueOf);
@@ -22,7 +23,8 @@ public class CounterExecutor {
                 execute(new AtomicLongAdderCounter(), count, String::valueOf);
 
                 System.out.println("-------- multi keys --------");
-                execute(new HashCounter(), count, String::valueOf);
+                HashCounter counter = new HashCounter();
+                execute(counter, count, String::valueOf);
                 execute(new ConcurrentHashCounter(), count, String::valueOf);
                 execute(new GuavaCacheCounter(), count, String::valueOf);
             } catch (Exception e) { e.printStackTrace(); }

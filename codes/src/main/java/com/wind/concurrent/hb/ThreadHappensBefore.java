@@ -1,6 +1,6 @@
 package com.wind.concurrent.hb;
 
-public class ThreadHappenBefore {
+public class ThreadHappensBefore {
     private int num = 0;
     private volatile boolean flag = false;
 
@@ -18,20 +18,16 @@ public class ThreadHappenBefore {
         this.num = 0;
         Thread odd = new Thread(() -> {
             while(count > num) {
-                if (!flag) {
-                    if (++num % 2 != 0) {
-                        flag = true;
-                    }
+                if (!flag && ++num % 2 != 0) {
+                    flag = true;
                 }
             }
         });
 
         Thread t2 = new Thread(() -> {
             while (count > num) {
-                if (flag) {
-                    if (++num % 2 == 0) {
-                        flag = false;
-                    }
+                if (flag && ++num % 2 == 0) {
+                    flag = false;
                 }
             }
         });

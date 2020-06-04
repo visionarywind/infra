@@ -14,6 +14,7 @@ public class HashCounter implements Counter {
         if (calculator == null) {
             lock.lock();
             try {
+                calculator = store.get(key);
                 if (calculator == null) {
                     calculator = new LongAdder();
                     store.put(key, calculator);
