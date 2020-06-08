@@ -4,7 +4,7 @@ plugins {
 
 allprojects {
     buildDir = "${projectDir}/../build/${name}"
-    
+
     tasks.withType(JavaCompile) {
         options.encoding = "UTF-8"
         sourceCompatibility=1.8
@@ -20,7 +20,7 @@ allprojects {
             memoryMaximumSize = '512m'
         }
     }
-    
+
     repositories {
         mavenLocal()
         jcenter()
@@ -32,4 +32,12 @@ allprojects {
 subprojects {
     apply plugin: 'java'
     version = '1.0.0-SNAPSHOT'
+
+    dependencies {
+        compileOnly 'org.projectlombok:lombok:1.18.12'
+        annotationProcessor 'org.projectlombok:lombok:1.18.12'
+
+        testCompileOnly 'org.projectlombok:lombok:1.18.12'
+        testAnnotationProcessor 'org.projectlombok:lombok:1.18.12'
+    }
 }
