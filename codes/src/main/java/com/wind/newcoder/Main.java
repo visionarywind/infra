@@ -18,8 +18,7 @@ public class Main {
 
     public static  String freqAlphabets(String s) {
         if (s == null || s.length() == 0) { return s; }
-        if (s.length() == 1) {
-            return Character.toString((char)('a' + s.charAt(0) - '0' - 1)); }
+        if (s.length() == 1) { return Character.toString((char)('a' + s.charAt(0) - '0' - 1)); }
         if (s.length() == 2) {
             return freqAlphabets(s.substring(0, 1)) + freqAlphabets(s.substring(1));
         }
